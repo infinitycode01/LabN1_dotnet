@@ -18,7 +18,7 @@ public class Person
     {
         this.name = "Dmytro";
         this.surname = "Badichel";
-        this.birthDate = new DateTime(2004, 9, 11);
+        this.birthDate = new DateTime(2004, 9, 11, 7, 7, 7);
     }
 
     public string Name
@@ -43,5 +43,15 @@ public class Person
         {
             birthDate = new DateTime(value, birthDate.Month, birthDate.Day);
         }
+    }
+
+    public override string ToString()
+    {
+        return "Name: " + Name + "\n" + "Surname: " + Surname + "\n" + "Birth date: " + BirthDate;
+    }
+
+    public string ToShortString()
+    {
+        return "Name: " + Name + "\n" + "Surname: " + Surname;
     }
 }
