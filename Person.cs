@@ -21,27 +21,36 @@ public class Person
         this.birthDate = new DateTime(2004, 9, 11, 7, 7, 7);
     }
 
+    /*
+    питання до викладача get { return name; } best practice??
+    
     public string Name
     {
-        get => name; // питання до викладача get { return name; } best practice??
+        get => name;  
         init => name = value;
+    }*/
+
+    public string Name
+    {
+        get { return name; }
+        init { name = value; }
     }
 
     public string Surname
     {
-        get => surname;
-        init => surname = value;
+        get { return surname; }
+        init { surname = value; }
     }
 
     public System.DateTime BirthDate
     {
-        get => birthDate;
-        init => birthDate = value;
+        get { return birthDate; }
+        init { birthDate = value; }
     }
 
     public int BirthYear
     {
-        get => birthDate.Year;
+        get { return birthDate.Year; }
         set
         {
             birthDate = new DateTime(value, birthDate.Month, birthDate.Day);
