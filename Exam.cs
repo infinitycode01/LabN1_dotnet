@@ -22,6 +22,8 @@ public class Exam
 
     public override string ToString()
     {
-        return "Subject name: " + SubjectName + "\n" + "Assessment: " + Assessment + "\n" + "Exam date: " + ExamDate;
+        return "Subject name: " + SubjectName + "\n" 
+            + "Assessment: " + Assessment + "\n" 
+            + "Exam date: " + ExamDate;
     }
 }

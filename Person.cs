@@ -59,7 +59,9 @@ public class Person
 
     public override string ToString()
     {
-        return "Name: " + Name + "\n" + "Surname: " + Surname + "\n" + "Birth date: " + BirthDate;
+        return "Name: " + Name + "\n" 
+            + "Surname: " + Surname + "\n" 
+            + "Birth date: " + BirthDate;
     }
 
     public string ToShortString()
