@@ -23,22 +23,25 @@ public class Person
 
     public string Name
     {
-        get { return name; }
+        get => name; // питання до викладача get { return name; } best practice??
+        init => name = value;
     }
 
     public string Surname
     {
-        get { return surname; }
+        get => surname;
+        init => surname = value;
     }
 
     public System.DateTime BirthDate
     {
-        get { return birthDate; }
+        get => birthDate;
+        init => birthDate = value;
     }
 
     public int BirthYear
     {
-        get { return birthDate.Year; }
+        get => birthDate.Year;
         set
         {
             birthDate = new DateTime(value, birthDate.Month, birthDate.Day);
