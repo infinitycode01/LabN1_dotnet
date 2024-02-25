@@ -4,28 +4,28 @@ class Program
 {
     static void Main(string[] args)
     {
-        Person firstPerson = new Person();
-        Exam exam1 = new Exam();
-        Student student1 = new Student();
-        Student student2 = new Student(firstPerson, Education.Master, 130);
+        /*Student student = new Student();
+        Console.WriteLine(student.ToShortString());
 
+        Console.WriteLine(student[Education.Bachelor]);
+        Console.WriteLine(student[Education.Master]);
+        Console.WriteLine(student[Education.SecondEducation]);
 
-        Exam[] exams = new Exam[]
+        Student studentAnother = new Student()
         {
-            new Exam("Gaming", 123, new DateTime(2023, 11, 11, 2, 2, 2)),
-            new Exam("asas", 44, new DateTime(2023, 11, 11, 2, 2, 2)),
-            new Exam("sddd", 66, new DateTime(2023, 11, 11, 2, 2, 2))
+            StudentData = new Person("Albert", "Alberto", new DateTime(2000, 2, 2, 2, 2, 2)),
+            EducationForm = Education.Master,
+            GroupNumber = 311,
+            ExamsTaken = [new Exam(), new Exam(), new Exam()]
         };
-        student2.AddExams(exams);
-        //Console.WriteLine(student2.ToString());
+        Console.WriteLine(studentAnother.ToString());
 
 
-        Console.WriteLine(student2.ToString());
+        Exam[] newExam = [new Exam("Math", 60, new DateTime(2024, 11, 11, 9, 0, 0)), 
+            new Exam("C++", 60, new DateTime(2024, 11, 11, 9, 0, 0)), 
+            new Exam("Java", 60, new DateTime(2024, 11, 11, 9, 0, 0))];
 
-        
-
-        //Console.WriteLine(firstPerson.ToShortString());
-
-
+        studentAnother.AddExams(newExam);
+        Console.WriteLine(studentAnother.ToString());*/
     }
 }

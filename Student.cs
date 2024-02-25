@@ -67,7 +67,7 @@
         {
             get
             {
-                if (this.educationForm == index)
+                if (educationForm == index)
                 {
                     return true;
                 }
