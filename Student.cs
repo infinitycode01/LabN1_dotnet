@@ -71,54 +71,28 @@
 
         public void AddExams(params Exam[] newExams)
         {
-            /*if (newExams == null || newExams.Length == 0)
+            if (newExams == null || newExams.Length == 0)
             {
                 return;
             }
+
             if (ExamsTaken == null || ExamsTaken.Length == 0)
             {
-                ExamsTaken = newExams;
+                _examsTaken = newExams;
                 return;
-            }*/
+            }
 
-            //Resize зробити
-
-            /*foreach (var exam in newExams)
+            int currentLength = ExamsTaken.Length;
+            Array.Resize(ref _examsTaken, currentLength + newExams.Length);
+            
+            for (int i = 0; i < newExams.Length; i++)
             {
-                ExamsTaken = exam;
-            }*/
+                _examsTaken[currentLength + i] = newExams[i];
+            }
 
-
-
-            /*examsTaken = new Exam[newExams.Length];
-            for (int i = 0; i < examsTaken.Length; i++)
-            {
-                examsTaken[i] = newExams[i]; 
-            }*/
-
-            /*int availableSlots = examsTaken.Length - examsTaken.Count(exam => exam != null);
-            if (newExams.Length > availableSlots)
-            {
-                Console.WriteLine("Not enough space to add new exams");
-                return;
-            }*/
-
-            /*int index = 0;
-            for (int i = 0; i < examsTaken.Length; i++)
-            {
-                if (examsTaken[i] == null)
-                {
-                    examsTaken[i] = newExams[index];
-                    index++;
-                }
-
-                if (index >= newExams.Length)
-                {
-                    break;
-                }
-            }*/
-            Console.WriteLine("Exams was added successfully");
+            Console.WriteLine("Exams were added successfully");
         }
+
 
         public override string ToString()
         {

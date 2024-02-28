@@ -100,11 +100,5 @@ class Program
         end = Environment.TickCount;
         delta = end - start;
         Console.WriteLine("Operation time for array3 = " + delta);
-
-
-        // в конструкторі з параметрами використовувати властивоств а не this
-        // _ в всіх поях класів
-        // В конструкторі без параметрів викоистовувати :this
-        // array3 виділення памяті Запитати у Нікіти
     }
 }
