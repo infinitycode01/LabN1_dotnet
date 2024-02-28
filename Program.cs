@@ -4,7 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        /*Student student = new Student();
+        Student student = new Student();
         Console.WriteLine(student.ToShortString());
 
         Console.WriteLine(student[Education.Bachelor]);
@@ -26,8 +26,8 @@ class Program
             new Exam("Java", 60, new DateTime(2024, 11, 11, 9, 0, 0))];
 
         studentAnother.AddExams(newExam);
-        Console.WriteLine(studentAnother.ToString());*/
-        int a = Environment.TickCount;
+        Console.WriteLine(studentAnother.ToString());
+
         Console.WriteLine("Input Rows and Columns like (*rows*',''-'' ''_'*columns*): ");
         string[] inputLine = Console.ReadLine().Split(',', '-', ' ', '_');
         int nRows = int.Parse(inputLine[0]);
@@ -38,28 +38,13 @@ class Program
 
         Exam[] array1 = new Exam[nRows * nColumns];
         Exam[,] array2 = new Exam[nRows, nColumns];
-        Exam[][] array3 = new Exam[nRows][];
-        for (int i = 0; i < nRows; i++)
-        {
-            array3[i] = new Exam[nColumns];
-        } 
-
-        for (int i = 0; i < nRows; i++)
-        {
-            for (int j = 0; j < nColumns; j++)
-            {
-                array1[i * nColumns + j] = new Exam();
-                array2[i, j] = new Exam();
-                array3[i][j] = new Exam();
-            }
-        }
-        
+      
         int start, end, delta;
 
         start = Environment.TickCount;
         for (int i = 0; i < array1.Length; i++)
         {
-            array1[i].ExamDate = new DateTime(2222, 12, 12, 12, 12, 12);
+            array1[i] = new Exam("Probraming", 100, new DateTime(2024, 6, 13));
         }
         end = Environment.TickCount;
         delta = end - start;
@@ -70,29 +55,56 @@ class Program
         {
             for (int j = 0; j < nColumns; j++)
             {
-                array2[i, j].ExamDate = new DateTime(2222, 12, 12, 12, 12, 12);
+                array1[i] = new Exam("Probraming", 100, new DateTime(2024, 6, 13));
             }
         }
         end = Environment.TickCount;
         delta = end - start;
         Console.WriteLine("Operation time for array2 = " + delta);
 
-        start = Environment.TickCount;
-         for (int i = 0; i < nRows; i++)
-        {
-            for (int j = 0; j < nColumns; j++)
-            {
+        int totalElements = nRows * nColumns;
+        Random rnd = new Random();
 
-                array3[i][j].ExamDate = new DateTime(2222, 12, 12, 12, 12, 12);
+        int accum = 0;
+        int rows = 0;
+
+        do
+        {
+            rows++;
+            accum += rows;
+        } 
+        while (accum < totalElements);
+
+        Exam[][] array3 = new Exam[rows][];
+        start = Environment.TickCount;
+        for (int i = 0; i < rows-1; i++)
+        {
+            array3[i] = new Exam[i + 1];
+            for (int j = 0; j < i + 1; j++)
+            {
+                array3[i][j] = new Exam("Probraming", 100, new DateTime(2024, 6, 13));
             }
+        }
+
+        int lastFewElements = rows - (accum - totalElements);
+        if (lastFewElements > 0)
+        {
+            array3[rows - 1] = new Exam[lastFewElements];
+
+            for (int i = 0; i < lastFewElements; i++)
+            {
+                array3[rows - 1][i] = new Exam("Probraming", 100, new DateTime(2024, 6, 13));
+            }
+
         }
         end = Environment.TickCount;
         delta = end - start;
         Console.WriteLine("Operation time for array3 = " + delta);
 
-        int b = Environment.TickCount;
 
-        Console.WriteLine(b - a);
-        
+        // в конструкторі з параметрами використовувати властивоств а не this
+        // _ в всіх поях класів
+        // В конструкторі без параметрів викоистовувати :this
+        // array3 виділення памяті Запитати у Нікіти
     }
 }

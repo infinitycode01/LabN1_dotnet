@@ -2,9 +2,9 @@ namespace LabN1_dotnet;
 
 public class Exam
 {
-    public string SubjectName { get; set; }
-    public int Assessment { get; set; }
-    public System.DateTime ExamDate { get; set; }
+    public string SubjectName { get; init; }
+    public int Assessment { get; init; }
+    public System.DateTime ExamDate { get; init; }
 
     public Exam(string name, int assessment, System.DateTime date)
     {
@@ -13,12 +13,8 @@ public class Exam
         ExamDate = date;
     }
 
-    public Exam()
-    {
-        SubjectName = "Programming";
-        Assessment = 100;
-        ExamDate = new DateTime(2024, 6, 12, 9, 0, 0);
-    }
+    public Exam(): this(name: "Programming", assessment: 100, date: new DateTime(2024, 6, 12, 9, 0, 0)) { }
+
 
     public override string ToString()
     {

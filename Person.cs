@@ -2,70 +2,54 @@ namespace LabN1_dotnet;
 
 public class Person
 {
-    private string name;
-    private string surname;
-    private System.DateTime birthDate;
+    private string _firstName;
+    private string _lastName;
+    private System.DateTime _birthDate;
 
 
-    public Person(string name, string surname, System.DateTime birthDate)
+    public Person(string firstName, string lastName, System.DateTime birthDate)
     {
-        this.name = name;
-        this.surname = surname;
-        this.birthDate = birthDate;
+        FirstName = firstName;
+        LastName = lastName;
+        BirthDate = birthDate;
     }
 
-    public Person()
-    {
-        this.name = "Dmytro";
-        this.surname = "Badichel";
-        this.birthDate = new DateTime(2004, 9, 11, 7, 7, 7);
-    }
-
-    /*
-    питання до викладача get { return name; } best practice??
+    public Person(): this(firstName: "Dmytro", lastName: "Badichel", birthDate: new DateTime(2004, 9, 11, 7, 7, 7)) { }
     
-    public string Name
+    public string FirstName
     {
-        get => name;  
-        init => name = value;
-    }*/
-
-    public string Name
-    {
-        get { return name; }
-        init { name = value; }
+        get { return _firstName; }
+        init { _firstName = value; }
     }
 
-    public string Surname
+    public string LastName
     {
-        get { return surname; }
-        init { surname = value; }
+        get { return _lastName; }
+        init { _lastName = value; }
     }
 
     public System.DateTime BirthDate
     {
-        get { return birthDate; }
-        init { birthDate = value; }
+        get { return _birthDate; }
+        init { _birthDate = value; }
     }
 
     public int BirthYear
     {
-        get { return birthDate.Year; }
+        get { return _birthDate.Year; }
         set
         {
-            birthDate = new DateTime(value, birthDate.Month, birthDate.Day);
+            _birthDate = new DateTime(value, _birthDate.Month, _birthDate.Day);
         }
     }
 
     public override string ToString()
     {
-        return "Name: " + Name + "\n" 
-            + "Surname: " + Surname + "\n" 
+        return "Name: " + FirstName + "\n" 
+            + "Surname: " + LastName + "\n" 
             + "Birth date: " + BirthDate;
     }
 
-    public string ToShortString()
-    {
-        return "Name: " + Name + "\n" + "Surname: " + Surname;
-    }
+    public string ToShortString() => "Name: " + FirstName + "\n" + "Surname: " + LastName;
+
 }
